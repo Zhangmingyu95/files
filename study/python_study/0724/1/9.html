@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="2.js"></script>
+</head>
+<body>
+
+<div>
+<p>请输入 5 - 10 之间的数字：</p>
+<input id="demo" type="text">
+<button type="button" onclick="myFunction()">测试输入</button>
+<p id="message"></p>
+<script>
+function myFunction() {
+    var message, x;
+    message = document.getElementById("message");
+    message.innerHTML = "";
+    x = document.getElementById("demo").value;
+    try {
+        if(x == "") throw "空的";
+         if(isNaN(x)) throw "不是数字";
+         x = Number(x);
+        if(x < 5) throw  "太小";
+        if(x > 10) throw "太大";
+    }
+    catch(err) {
+        message.innerHTML = "输入是 " + err;
+    }
+</script>
+</div>
+
+<div>
+<form >
+<fieldset style="height: 150px">
+    <legend>验证</legend>
+<p>
+    请输入name:&nbsp;<input type="text" id="nameinput"><br>
+
+ <input type="button" value="请提交"  onclick="nameinputcheckfunction()">
+    <p id="nameinputchecknotice"></p>
+
+</p>
+<p></p>
+</fieldset>
+</form>
+</div>
+
+
+<div>
+    checkValidity() 方法
+如果输入字段包含无效的数据，显示一条消息：
+
+<input id="id1" type="number" min="100" max="300" required>
+<button onclick="myFunction()">OK</button>
+
+<p id="demo1"></p>
+
+<script>
+ function myFunction() {
+    var inpObj = document.getElementById("id1");
+    if (inpObj.checkValidity() == false) {
+        document.getElementById("demo1").innerHTML = inpObj.validationMessage;
+    }
+}
+</script>
+</div>
+
+<script>
+    document.write( new Date())
+</script>
+
+
+</body>
+</html>

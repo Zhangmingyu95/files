@@ -1,0 +1,112 @@
+'''high=1.75
+weight=80.5
+bmi=weight/(high*high)
+if bmi < 18.5:
+    print('过轻')
+elif bmi>=18.5 and bmi<25:
+    print('正常')
+elif bmi >= 25 and bmi <28:
+    print('过重')
+elif bmi >=28 and bmi <32:
+    print('肥胖')
+else:
+    print('严重肥胖')
+    pass
+l=list(range(101))
+s=0
+for l in l:
+    s=s+l
+print(s)
+
+l=['bart','lisa','adam']
+for l in l:
+    print(l)
+pass
+
+i=1
+s=0
+while i <= 100:
+
+    if i >= 5:
+        continue
+    s=s+i
+    i=i+1
+    print(s)
+'''
+
+
+'''import math
+
+def quadratic(a,b,c):
+    x1=(-b+math.sqrt(b*b-4*a*c))/(2*a)
+    x2=(-b-math.sqrt(b*b-4*a*c))/(2*a)
+    return x1,x2
+print('quadratic(2, 3, 1) =', input(a, b, c))
+print('quadratic(1, 3, -4) =', quadratic(1, 3, -4))
+
+if quadratic(2, 3, 1) != (-0.5, -1.0):
+    print('测试失败')
+elif quadratic(1, 3, -4) != (1.0, -4.0):
+    print('测试失败')
+else:
+    print('测试成功')
+'''
+'''number=[]
+number.append(str(input()))
+number.append(int(input()))
+print(number)'''
+'''def cal(*number):
+        print("weillcome the most handsome guy: " + number[0]+',' + '\nhis age is '+number[1])
+        return
+cal(*number)'''
+'''def person(name,age,**kw):
+    print('name:',name,'age:',age,'other:',kw)
+    print(kw)
+person('adam',24,city=123,gender=234)'''
+
+'''def f1(a, b, c=0, *args, **kw):
+    print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)
+
+def f2(a, b, c=0, *, d, **kw):
+    print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'kw =', kw)
+args = (1, 2, 3, 4,5)
+kw = {'d': 99, 'x': '#'}
+f1(*args, **kw)'''
+
+def product (*arg):
+    if arg==():
+        print('请输入')
+        return
+    result=1
+    for a in arg:
+        if not isinstance(a,int):
+            print('请输入数字')
+            break
+        else:
+            result = result * a
+    return result
+
+
+print('product(5) =', product(5))
+print('product(5, 6) =', product(5, 6))
+print('product(5, 6, 7) =', product(5, 6, 7))
+print('product(5, 6, 7, 9) =', product(5, 6, 7, 9))
+if product(5) != 5:
+    print('测试失败1!')
+elif product(5, 6) != 30:
+    print('测试失败2!')
+elif product(5, 6, 7) != 210:
+    print('测试失败3!')
+elif product(5, 6, 7, 9) != 1890:
+    print('测试失败4!')
+else:
+    try:
+        product()
+        print('测试失败5!')
+    except TypeError:
+        print('测试成功!')'''
+def fact(n):
+    if n==1:
+        return 1
+    return n * fact(n - 1)
+print(fact(999))

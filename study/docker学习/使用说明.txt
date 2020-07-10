@@ -1,0 +1,49 @@
+1.docker 安装：
+
+#卸载：
+#yum -y remove docker-ce*
+
+yum install -y yum-utils device-mapper-persistent-data lvm2
+yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+
+yum list docker-ce.x86_64  --showduplicates | sort -r
+
+yum -y install --setopt=obsoletes=0 docker-ce-18.09.1-3.el7 
+
+systemctl enable docker
+systemctl start docker
+
+或者直接执行: sh install_docker.sh
+
+2.在需要连接harbor镜像仓库机器上
+编辑hosts文件，
+
+添加一行：
+
+10.6.5.174 registry.uih
+
+vi /etc/docker/daemon.json
+
+{
+    "registry-mirrors": ["http://f1361db2.m.daocloud.io"],
+     "insecure-registries": [ "registry.uih"]
+}
+
+3.重启docker
+
+systemctl restart docker
+
+
+4.登录：
+
+[root@node3 ~]# docker login registry.uih
+Username: liang.yan
+Password: 
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+[root@node3 ~]# 
+
+

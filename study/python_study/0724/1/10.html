@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #te {
+            height: 50px;
+            width: 100px;
+            background-color: grey;
+        }
+        #div {
+            height: 100px;
+            width: 100px;
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+
+<h1 onclick="changetext(this)">请点击</h1>
+<script>
+    function changetext(object){
+        object.innerHTML="helloa"
+    }
+</script>
+<input type="text" id="fname" onchange="myFunction()">
+<script>
+function myFunction() {
+  var x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+}
+</script>
+<img id="te" src="签名.png" onmouseover="o(this)" onmouseout="out(this)" onclick="click(this)">
+<script>
+    function o(obj) {
+
+        obj.src="签名2.png";
+    }
+    function out(obj) {
+        obj.style.backgroundColor="green";
+        obj.innerHTML="啊啊啊啊"
+    }
+    function click(obj){
+        obj.src="签名2.png";
+    }
+</script>
+<div id="div">
+    啊啊啊啊
+</div>
+<script>
+    document.getElementById("div").addEventListener("click",sss);
+    document.getElementById("div").addEventListener("click",ddd);
+    function sss(){
+        window.alert("sss")
+    }
+    function ddd(){
+        this.style.backgroundColor="red";
+    }
+</script>
+
+<script>
+    window.addEventListener("resize",sss)
+</script>
+
+
+
+<h1 id="id01">我的第一张网页</h1>
+<p id="id02">Hello!</p>
+
+<script>
+document.getElementById("id02").innerHTML  = document.getElementById("id01").nodeType
+</script>
+
+<div id="div1">
+<p id="p1">这是一个段落。</p>
+<p id="p2">这是另一个段落。</p>
+</div>
+
+<script>
+    var para = document.createElement("p");
+    var text = document.createTextNode("洒洒水");
+    para.appendChild(text);
+    var element = document.getElementById("div1");
+    var sss = document.getElementById("p1");
+    element.insertBefore(para,sss);
+
+</script>
+
+<script>
+    var x = document.getElementsByTagName("p").length;
+    document.getElementById("p1").innerHTML = x;
+</script>
+
+<script>
+
+    window.alert(window.screen.Width);
+    window.alert(window.screen.availHeight);
+    window.alert(window.screen.colorDepth);
+    window.alert(window.location.href);
+    window.alert(window.location.hostname);
+    window.alert(window.location.pathname);
+    window.alert(window.location.protocol);
+    window.alert(window.location.port);
+    window.history.back();
+</script>
+
+
+<script>
+function newDoc() {
+    window.location.assign("https://www.w3school.com.cn")
+ }
+</script>
+
+<input type="button" value="Load new document" onclick="window.history.back()">
+
+<script>
+    window.alert(navigator.appName)
+</script>
+
+<p id="asd"></p>
+
+<script>
+    document.getElementById("asd").innerHTML=window.navigator.appCodeName+navigator.platform;
+</script>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = "cookiesEnabled is " + navigator.cookieEnabled;
+    alert("1");
+</script>
+
+<script>
+    var zc = confirm("sssssssss");
+    if (zc == true) {
+       qwe = "tes";
+    }else{
+        qwe = "no";
+    }
+    window.alert(qwe);
+</script>
+</body>
+
+</html>
