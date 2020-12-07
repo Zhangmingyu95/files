@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="generator" content="Bootstrap Listr">
+  <title>文件系统</title>
+  <link rel="stylesheet" href="/assets/css/custom.css">
+  <link rel="stylesheet" href="/assets/css/listr.pack.css">
+  <link rel="stylesheet" href="/assets/css/jquery.filer.css">
+</head>
+<body dir="ltr">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <ol class="breadcrumb" dir="ltr">
+            <li class="breadcrumb-item"><a href="/"><i class="fa fa-fw fa-home fa-lg"></i> </a></li>
+            
+            <li class="breadcrumb-item"><a href="/apps/"><strong>apps</strong></a></li>
+            
+            <li class="breadcrumb-item"><a href="/apps/UI%E8%87%AA%E5%8A%A8%E5%8C%96/"><strong>UI自动化</strong></a></li>
+            
+             <li class="login"><a data-toggle="modal" data-target="#login-modal" class="btn btn-secondary text-muted"><i class="fa fa-fw fa-user"></i><strong id="userlogin"></strong></a></li>
+        </ol>
+      </div>
+      <div class="col-xs-12 col-sm-5 col-md-4 col-sm-offset-7 col-md-offset-8 pull-sm-right">
+        <div class="form-group">
+            <label class="form-control-label sr-only" for="listr-search">搜索</label>
+            <input type="text" id="listr-search" class="form-control" placeholder="搜索">
+        </div>
+      </div>
+      <div class="pull-sm-right">
+        <div class="btn-group">
+          <a id="upload-file" data-toggle="modal" data-target="#uploader-modal" class="btn btn-secondary text-muted permission">上传文件</a>
+          <a id="create-dir" data-toggle="modal" data-target="#create-modal" class="btn btn-secondary text-muted permission">新建文件夹</a>
+        </div>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table id="listr-table" class="table table-hover">
+        <thead>
+          <tr>
+            <th class="text-xs-left " data-sort="string">名称</th>
+            <th class="text-xs-right " data-sort="int">大小</th>
+            <th class="text-xs-right " data-sort="int">修改时间</th>
+            <th class="text-xs-right permission">操作</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <td colspan="3">
+                <small class="pull-xs-left text-muted" dir="ltr">0个文件夹，4个文件, 共474.0 MB </small>
+            </td>
+          </tr>
+        </tfoot>
+        <tbody>
+          
+          
+          <tr>
+              <td class="text-xs-left " data-sort-value="file-virtualbox-6.0.22-137980-win.exe"><i class="fa fa-fw fa-file-o " aria-hidden="true"></i>&nbsp;
+              <a  href="VirtualBox-6.0.22-137980-Win.exe" data-size="170.6 MB">VirtualBox-6.0.22-137980-Win.exe</a>
+              </td>
+              <td class="text-xs-right " data-sort-value="170617352" title="170617352 bytes">170.6 MB</td>
+              <td class="text-xs-right " data-sort-value="1603690220.152754" title="2020-10-26 05:30:20">1月之前</td>
+              <td class="text-xs-right" colspan="2">
+                <a data-toggle="modal" data-target="#delete-modal" type="button" class="btn btn-secondary btn-sm permission" data-href="VirtualBox-6.0.22-137980-Win.exe">删除</a>
+                <a data-toggle="modal" data-target="#edit-modal" type="button" class="btn btn-secondary btn-sm permission" data-href="VirtualBox-6.0.22-137980-Win.exe">重命名</a>
+                <a data-toggle="modal" data-target="#move-modal" type="button" class="btn btn-secondary btn-sm permission" data-href="VirtualBox-6.0.22-137980-Win.exe">移动</a>
+              </td>
+          </tr>
+          
+          <tr>
+              <td class="text-xs-left " data-sort-value="file-boot2docker.iso"><i class="fa fa-fw fa-file-o " aria-hidden="true"></i>&nbsp;
+              <a  href="boot2docker.iso" data-size="58.7 MB">boot2docker.iso</a>
+              </td>
+              <td class="text-xs-right " data-sort-value="58720256" title="58720256 bytes">58.7 MB</td>
+              <td class="text-xs-right " data-sort-value="1603690219.7327523" title="2020-10-26 05:30:19">1月之前</td>
+              <td class="text-xs-right" colspan="2">
+                <a data-toggle="modal" data-target="#delete-modal" type="button" class="btn btn-secondary btn-sm permission" data-href="boot2docker.iso">删除</a>
+                <a data-toggle="modal" data-target="#edit-modal" type="button" class="btn btn-secondary btn-sm permission" data-href="boot2docker.iso">重命名</a>
+                <a data-toggle="modal" data-target="#move-modal" type="button" class="btn btn-secondary btn-sm permission" data-href="boot2docker.iso">移动</a>
+              </td>
+          </tr>
+          
+          <tr>
+              <td class="text-xs-left " data-sort-value="file-dockertoolbox-19.03.1.exe"><i class="fa fa-fw fa-file-o " aria-hidden="true"></i>&nbsp;
+              <a  href="DockerToolbox-19.03.1.exe" data-size="242.5 MB">DockerToolbox-19.03.1.exe</a>
+              </td>
+              <td class="text-xs-right " data-sort-value="242520560" title="242520560 bytes">242.5 MB</td>
+              <td class="text-xs-right " data-sort-value="1603690219.9727533" title="2020-10-26 05:30:19">1月之前</td>
+              <td class="text-xs-right" colspan="2">
+                <a data-toggle="modal" data-target="#delete-modal" type="button" class="btn btn-secondary btn-sm permission" data-href="DockerToolbox-19.03.1.exe">删除</a>
+                <a data-toggle="modal" data-target="#edit-modal" type="button" class="btn btn-secondary btn-sm permission" data-href="DockerToolbox-19.03.1.exe">重命名</a>
+                <a data-toggle="modal" data-target="#move-modal" type="button" class="btn btn-secondary btn-sm permission" data-href="DockerToolbox-19.03.1.exe">移动</a>
+              </td>
+          </tr>
+          
+          <tr>
+              <td class="text-xs-left " data-sort-value="file-tightvnc-2.8.8-gpl-setup-64bit.msi"><i class="fa fa-fw fa-file-o " aria-hidden="true"></i>&nbsp;
+              <a  href="tightvnc-2.8.8-gpl-setup-64bit.msi" data-size="2.2 MB">tightvnc-2.8.8-gpl-setup-64bit.msi</a>
+              </td>
+              <td class="text-xs-right " data-sort-value="2191360" title="2191360 bytes">2.2 MB</td>
+              <td class="text-xs-right " data-sort-value="1603690219.9827533" title="2020-10-26 05:30:19">1月之前</td>
+              <td class="text-xs-right" colspan="2">
+                <a data-toggle="modal" data-target="#delete-modal" type="button" class="btn btn-secondary btn-sm permission" data-href="tightvnc-2.8.8-gpl-setup-64bit.msi">删除</a>
+                <a data-toggle="modal" data-target="#edit-modal" type="button" class="btn btn-secondary btn-sm permission" data-href="tightvnc-2.8.8-gpl-setup-64bit.msi">重命名</a>
+                <a data-toggle="modal" data-target="#move-modal" type="button" class="btn btn-secondary btn-sm permission" data-href="tightvnc-2.8.8-gpl-setup-64bit.msi">移动</a>
+              </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+    <div class="modal fade" id="viewer-modal" tabindex="-1" role="dialog" aria-labelledby="file-name" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close pull-xs-right" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title text-left" id="file-name">&nbsp;</h4>
+            <small class="text-muted" id="file-meta"></small>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <div class="pull-xs-left">
+              <button type="button" class="btn btn-link highlight hidden-xs-up">Apply syntax highlighting</button>
+            </div>
+            <div class="pull-xs-right">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+              <div class="btn-group">
+                <a href="#" class="btn btn-primary fullview" download>下载</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="uploader-modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">上传文件</h5>
+          </div>
+          <div class="modal-body">
+            <form id="upload-files" method="post" enctype="multipart/form-data">
+                <input type="file" name="files[]" id="filer_input" multiple="multiple">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <div class="pull-xs-right">
+              <button type="button" id="close-uploader" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="file-name" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">删除文件</h5>
+          </div>
+          <div class="modal-body">
+            <label id="Tips">确定删除文件吗?</label>
+          </div>
+          <div class="modal-footer">
+            <div class="pull-xs-right">
+              <button type="button" id="close-delete" class="btn btn-secondary" data-dismiss="modal">取消</button>
+              <button type="button"  id="send-delete" method="delete" class="btn btn-secondary" >确定</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="file-name" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">文件重命名</h5>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="old_name">文件名：</label>
+              <input type="text" id="old_name" name="old_name" class="form-control" readonly />
+            </div>
+            <div class="form-group">
+              <label for="new_name">重命名：</label>
+              <input type="text" id="new_name" name="new_name" class="form-control" value="" maxlength="20">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="pull-xs-right">
+              <button type="button" id="close-edit" class="btn btn-secondary" data-dismiss="modal">取消</button>
+              <button type="button"  id="send-edit" method="put" class="btn btn-secondary" >确定</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="create-modal" tabindex="-1" role="dialog" aria-labelledby="file-name" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">新建文件夹</h5>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="dir_name">文件名:</label>  
+              <input type="text" id="dir_name" name="dir_name" class="form-control" value="" maxlength="20"/>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="pull-xs-right">
+              <button type="button" id="close-create" class="btn btn-secondary" data-dismiss="modal">取消</button>
+              <button type="button" id="send-create" method="post" class="btn btn-secondary">确定</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="move-modal" tabindex="-1" role="dialog" aria-labelledby="file-name" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">移动文件</h5>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="hidden" id="old_dir_name" class="form-control" value="">
+              <select class="form-control" id="new_dir_name">
+                
+                <option value=/>/</option>
+                
+                <option value=/docs>/docs</option>
+                
+                <option value=/others>/others</option>
+                
+                <option value=/books>/books</option>
+                
+                <option value=/private>/private</option>
+                
+                <option value=/video>/video</option>
+                
+                <option value=/apps>/apps</option>
+                
+                <option value=/video/业务分享>/video/业务分享</option>
+                
+                <option value=/video/后端培训视频和资料>/video/后端培训视频和资料</option>
+                
+                <option value=/video/技术分享>/video/技术分享</option>
+                
+                <option value=/video/提测演示>/video/提测演示</option>
+                
+                <option value=/video/前端视频>/video/前端视频</option>
+                
+                <option value=/apps/公文管理>/apps/公文管理</option>
+                
+                <option value=/apps/APP自动化>/apps/APP自动化</option>
+                
+                <option value=/apps/UI自动化>/apps/UI自动化</option>
+                
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="pull-xs-right">
+              <button type="button" id="close-move" class="btn btn-secondary" data-dismiss="modal">取消</button>
+              <button type="button" id="send-move" method="post" class="btn btn-secondary">确定</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <!-- <form id="login"> -->
+            <div class="modal-body">
+              <div class="md-form">
+                <i class="fa fa-envelope prefix grey-text"> </i><label>用户名</label>
+                <input type="text" id="username" class="form-control">
+              </div>
+              <div class="md-form">
+                <i class="fa fa-lock prefix grey-text"> </i>
+                <label>密码</label>
+                <input type="password" id="password" class="form-control">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="pull-xs-right">
+                <button type="button" id="close-login" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                <!-- <button type="submit" id="send-login" class="btn btn-secondary">登录</button> -->
+                <button type="button" id="send-login" class="btn btn-secondary">登录</button>
+              </div>
+            </div>
+          <!-- </form> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/js/tether.min.js"></script>
+  <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/assets/js/listr.pack.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery.filer.min.js"></script>
+  <script type="text/javascript" src="/assets/js/jquery.base64.min.js"></script>
+  <script type="text/javascript" src="/assets/js/custom.js"></script>
+</body>
+</html>
+
